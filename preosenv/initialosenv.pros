@@ -1,0 +1,5 @@
+export userName=ocopsadm
+export userPWD=zaq12wsx
+export rootPWD=zaq12wsx
+export AdminUser=root
+export hostnameIPlist="192.168.0.118 192.168.0.119 192.168.0.120"
