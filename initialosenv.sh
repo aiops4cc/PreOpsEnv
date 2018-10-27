@@ -27,3 +27,12 @@ do
    sshpass -p $rootPWD ssh  -o StrictHostKeyChecking=no ${AdminUser}@${targetHost} "sudo /var/tmp/preosenv/createadmuser.sh"
    #sshpass -p ${userPWD}  ssh-copy-id -i ${BaseScriptDir}/preosenv/${userName}_rsa.pub  ${userName}@${targetHost}
 done
+if [ -d ~/.ssh ]
+then
+  cp ${BaseScriptDir}/preosenv/${userName}_rsa ~/.ssh
+  rm -rf ${BaseScriptDir}/preosenv/${userName}_rsa*
+else
+  mkdir ~/.ssh
+  cp ${BaseScriptDir}/preosenv/${userName}_rsa ~/.ssh
+  rm -rf ${BaseScriptDir}/preosenv/${userName}_rsa*
+fi
